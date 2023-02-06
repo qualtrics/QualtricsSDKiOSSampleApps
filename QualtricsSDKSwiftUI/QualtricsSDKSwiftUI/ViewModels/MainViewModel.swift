@@ -9,6 +9,7 @@ import Foundation
 import Qualtrics
 import UIKit
 import SwiftUI
+import StoreKit
 
 class MainViewModel: ObservableObject {
     @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
@@ -35,6 +36,7 @@ class MainViewModel: ObservableObject {
             return
         }
         // this doesn't work if the evaluateProject hasn't been called at least once before
+        // TODO: replace the interceptID below
         Qualtrics.shared.evaluateIntercept(for: "SI_2cbvwImx9Zo90N0") { targetingResult in
             guard targetingResult.passed() else {
                 print("Qualtrics: \(self) The intercept evaluation for went wrong.")
@@ -44,11 +46,26 @@ class MainViewModel: ObservableObject {
         }
     }
 
+    public func requestReviewWithQualtrics() {
+        // TODO: replace the interceptID below
+        Qualtrics.shared.evaluateIntercept(for: "SI_2cbvwImx9Zo90N0") { [weak self] targetingResult in
+            guard targetingResult.passed(), let scene = self?.getCurrentWindowScene() else {
+                print("Qualtrics: unable to ask for AppReview.")
+                return;
+            }
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+
     private func getRootViewController() -> UIViewController? {
         guard let keyWindow = UIApplication.shared.windows.first(where: \.isKeyWindow), let vc = keyWindow.rootViewController else {
             print("Qualtrics: \(self): Unable to determine the window that should be used to display intercepts")
             return nil;
         }
         return vc
+    }
+
+    private func getCurrentWindowScene() -> UIWindowScene? {
+        return UIApplication.shared.connectedScenes.first as? UIWindowScene
     }
 }

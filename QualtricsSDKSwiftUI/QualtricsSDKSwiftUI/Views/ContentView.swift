@@ -21,6 +21,10 @@ struct ContentView: View {
                 viewModel.evaluateInterceptButtonTapped()
             }
             Spacer()
+            Button("Ask for review button") {
+                viewModel.requestReviewWithQualtrics()
+            }
+            Spacer()
         }
         .padding()
     }
