@@ -11,6 +11,7 @@ import UIKit
 import SwiftUI
 import StoreKit
 import WebKit
+import UserNotifications
 
 class MainViewModel: ObservableObject {
     @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
@@ -124,6 +125,41 @@ class MainViewModel: ObservableObject {
         }
     }
 
+    public func giveFeedbackPromptBypassButtonTapped() {
+        Qualtrics.shared.evaluateProject { [weak self] targetingResults in
+            for (_, targetingResult) in targetingResults {
+                guard targetingResult.passed(), let url = targetingResult.getSurveyUrl() else {
+                    print("Qualtrics: validation of \(targetingResult) failed.")
+                    return
+                }
+                targetingResult.recordImpression()
+                DispatchQueue.main.async {
+                    self?.getRootViewController(completion: { vc in
+                        guard let vc = vc else {
+                            print("Qualtrics: unable to find the rootViewController")
+                            return
+                        }
+                        let surveyViewController = QualtricsSurveyViewController(url: url)
+                        surveyViewController.modalPresentationStyle = .overCurrentContext
+                        vc.present(surveyViewController, animated: true, completion: nil)
+                    })
+                }
+            }
+        }
+    }
+
+    // MARK: WIP
+//    public func localNotificationButtonTapped() {
+//        self.getCurrentWindowScene { [weak self] scene in
+//            guard let scene = scene, let window = scene.keyWindow else {
+//                print("Qualtrics: unable to get the key Window")
+//                return
+//            }
+//
+//
+//        }
+//    }
+
     private func presentSurvey(targetingResult: TargetingResult) {
         guard let urlString = targetingResult.getSurveyUrl(), let url = URL(string: urlString) else {
             print("Qualtrics: \(self) unable to get survay URL")
@@ -150,7 +186,7 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    @objc func dismissSurvey() {
+    @objc private func dismissSurvey() {
         DispatchQueue.main.async { [weak self] in
             self?.getRootViewController(completion: { vc in
                 guard let vc = vc else {

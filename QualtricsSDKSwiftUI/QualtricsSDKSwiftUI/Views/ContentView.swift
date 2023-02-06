@@ -11,22 +11,22 @@ struct ContentView: View {
     @StateObject private var viewModel = MainViewModel()
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 18) {
             Spacer()
             Button("Evaluate project button") {
                 viewModel.evaluateProjectButtonTapped()
             }
-            Spacer()
             Button("Evaluate second intercept button") {
                 viewModel.evaluateInterceptButtonTapped()
             }
-            Spacer()
             Button("Ask for review button") {
                 viewModel.requestReviewWithQualtrics()
             }
-            Spacer()
             Button("Simple Custom Survay Invitation Dialog Button") {
                 viewModel.simpleCustomSurvayInvitationDialog()
+            }
+            Button("Give Feedback Prompt Bypass Button") {
+                viewModel.giveFeedbackPromptBypassButtonTapped()
             }
             Spacer()
         }
