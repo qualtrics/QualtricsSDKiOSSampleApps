@@ -25,11 +25,16 @@ struct ContentView: View {
                 viewModel.requestReviewWithQualtrics()
             }
             Spacer()
+            Button("Simple Custom Survay Invitation Dialog Button") {
+                viewModel.simpleCustomSurvayInvitationDialog()
+            }
+            Spacer()
         }
         .padding()
         .onAppear {
             viewModel.registerViewVisit()
-            viewModel.AddEmbeddedText()
+            viewModel.addEmbeddedText()
         }
     }
 }
+
