@@ -27,5 +27,9 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
+        .onAppear {
+            viewModel.registerViewVisit()
+            viewModel.AddEmbeddedText()
+        }
     }
 }

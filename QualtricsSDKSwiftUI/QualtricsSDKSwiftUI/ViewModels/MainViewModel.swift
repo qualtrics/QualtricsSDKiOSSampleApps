@@ -57,6 +57,24 @@ class MainViewModel: ObservableObject {
         }
     }
 
+    public func registerViewVisit() {
+        Qualtrics.shared.properties.setString(string: "\(self)", for: "YourViewModelName")
+        Qualtrics.shared.registerViewVisit(viewName: "YourViewName")
+        Qualtrics.shared.evaluateProject { [weak self] targetingResults in
+            for (interceptID, result) in targetingResults {
+                guard result.passed(), let vc = self?.getRootViewController() else {
+                    print("Qualtrics: The evaluation for \(interceptID) went wrong.")
+                    return;
+                }
+                _ = Qualtrics.shared.display(viewController: vc)
+            }
+        }
+    }
+
+    public func AddEmbeddedText() {
+        Qualtrics.shared.properties.setString(string: "YourEmbeddedDataValue", for: "YourEmbeddedDataKey")
+    }
+
     private func getRootViewController() -> UIViewController? {
         guard let keyWindow = UIApplication.shared.windows.first(where: \.isKeyWindow), let vc = keyWindow.rootViewController else {
             print("Qualtrics: \(self): Unable to determine the window that should be used to display intercepts")
