@@ -16,45 +16,65 @@ import UserNotifications
 class MainViewModel: ObservableObject {
     @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
 
+    /// This function is the basic way to integrate qualtrics into your app
     public func evaluateProjectButtonTapped() {
+        /// 1. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
         self.getRootViewController { vc in
+            /// 2. Make sure your rootViewController is not nil (this may happen if the application is in the background, or just came back from it)
             guard let vc = vc else {
                 print("Qualtrics: failed to find the rootViewController")
                 return
             }
+            /// 3. Evaluate project is a function you need to call first each time you're integrating the project into your app.
+            /// Without calling evaluateProject you will not be able to execute other functionalities because we need to make sure
+            /// the preconditions determined in your Qualtrics project are met before allowing access to intercepts etc.
             Qualtrics.shared.evaluateProject { targetingResults in
+                /// targetingResults consists of interceptID, and result pairs.
+                /// The **InterceptIDs** are the id of the intercepts belonging to your project, while **result** is the result of validation
+                /// determinig if the intercept should be displayed.
                 for (interceptID, result) in targetingResults {
+                    /// 4. Make sure the preconditiones (logic determined within the project) are met, and you should display the intercept.
                     guard result.passed() else {
                         print("Qualtrics: The intercept evaluation for \(interceptID) went wrong.")
                         return;
                     }
+                    /// 5. Dysplay the intercept using the rootViewController.
                     _ = Qualtrics.shared.display(viewController: vc)
                 }
             }
         }
     }
-
+    
+    /// Evaluate intercept is your go-to function when you want to display a singular intercept.
+    /// Please beware that this function will only worh **after** you have called *evaluateProject* at least once within the app lifecycle.
     public func evaluateInterceptButtonTapped() {
+        /// 1. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
         self.getRootViewController { vc in
+            /// 2. Make sure your rootViewController is not nil (this may happen if the application is in the background, or just came back from it)
             guard let vc = vc else {
                 print("Qualtrics: failed to find the rootViewController")
                 return
             }
-            // this doesn't work if the evaluateProject hasn't been called at least once before
-            // TODO: replace the interceptID below
-            Qualtrics.shared.evaluateIntercept(for: "SI_2cbvwImx9Zo90N0") { targetingResult in
+            /// 3. Call evaluateIntercept with the InterceptID that you want
+            Qualtrics.shared.evaluateIntercept(for: "YourInterceptID") { targetingResult in
+                /// Since this function handles only one intercept at the time there is no need to return the interceptIDs like in evaluateProject callback.
+                ///  - the **targetingResult** is a value of *TargetingResult* type that will allow you to determine if the intercept has met the
+                ///  conditions under chich it is to be displayed in your app.
+                ///  You can do that simply by calling the *.passed()* function like in the line below.
                 guard targetingResult.passed() else {
                     print("Qualtrics: The intercept evaluation for went wrong.")
                     return;
                 }
+                /// 4. Now that you know that everything is in its place you can display the intercept by simply calling:
                 _ = Qualtrics.shared.display(viewController: vc)
             }
         }
     }
 
+    /// This function will allow you to integrate your own intercept with RequestAppleReview. That way you may be able to collect more valuable data.
     public func requestReviewWithQualtrics() {
-        // TODO: replace the interceptID below
-        Qualtrics.shared.evaluateIntercept(for: "SI_2cbvwImx9Zo90N0") { [weak self] targetingResult in
+        /// 1. The first step is to 
+        Qualtrics.shared.evaluateIntercept(for: "yourInterceptID") { [weak self] targetingResult in
             guard targetingResult.passed() else {
                 print("Qualtrics: unable to ask for AppReview.")
                 return;
