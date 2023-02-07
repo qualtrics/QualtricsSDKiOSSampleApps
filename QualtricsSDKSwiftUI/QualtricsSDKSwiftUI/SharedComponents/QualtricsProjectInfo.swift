@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// This is an example on how to extract the most commonly used data for project configuration in one place.
 class QualtricsProjectInfo: ObservableObject {
     static let shared = QualtricsProjectInfo()
     @Published var projectID: String
