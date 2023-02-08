@@ -24,8 +24,8 @@ struct QualtricsSDKSwiftUIApp: App {
     }
 
     private func configureQualtricsProjectData() {
-        qualtricsProjectInfo.brandID = "xmmobileint0lhr1"
-        qualtricsProjectInfo.projectID = "ZN_29z7vjRzTkCecXc"
+        qualtricsProjectInfo.brandID = "YourBrandID"
+        qualtricsProjectInfo.projectID = "YourProjectID"
     }
 
     var body: some Scene {

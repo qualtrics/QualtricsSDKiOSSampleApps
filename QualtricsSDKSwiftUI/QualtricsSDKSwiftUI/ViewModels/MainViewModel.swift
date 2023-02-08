@@ -216,18 +216,6 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    // MARK: WIP
-//    public func localNotificationButtonTapped() {
-//        self.getCurrentWindowScene { [weak self] scene in
-//            guard let scene = scene, let window = scene.keyWindow else {
-//                print("Qualtrics: unable to get the key Window")
-//                return
-//            }
-//          // TODO: fill in the notifications instructions
-//
-//        }
-//    }
-
     /// This is an example logic you can use to adopt the logic for SwiftUI use when you want to display an intercept
     /// - Parameters: *targetingResult* is of **TargetingResult** type, and should be provided in the *.passed()* function callback
     private func presentSurvey(targetingResult: TargetingResult) {
