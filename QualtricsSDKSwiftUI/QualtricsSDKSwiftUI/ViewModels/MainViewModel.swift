@@ -70,7 +70,7 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    /// This function will allow you to integrate **your own intercept** with RequestAppleReview. That way you may be able to collect more valuable data.
+    /// This function will allow you to integrate **your own intercept** with RequestAppleReview (App Store review). That way you may be able to collect more valuable data.
     public func requestReviewWithQualtrics() {
         /// 1. Call the *evaluateProject()* with the interceptID you want to connect here.
         Qualtrics.shared.evaluateIntercept(for: "yourInterceptID") { [weak self] targetingResult in
@@ -134,8 +134,8 @@ class MainViewModel: ObservableObject {
         /// 2. Once **EvaluateProject()** function is called the properties will be updated to the Qualtrics project.
     }
 
-    /// This function is an example how to use the custom survay invitation dialog.
-    public func simpleCustomSurvayInvitationDialog() {
+    /// This function is an example how to use the custom survey invitation dialog.
+    public func simpleCustomSurveyInvitationDialog() {
         /// 1. **Evaluate project is a function you need to call first each time you're integrating the project into your app.**
         /// It ensures the preconditions determined in your Qualtrics project are met before allowing access to intercepts etc.
         Qualtrics.shared.evaluateProject { [weak self] targetingResults in
@@ -205,7 +205,7 @@ class MainViewModel: ObservableObject {
                             print("Qualtrics: unable to find the rootViewController")
                             return
                         }
-                        /// 7. Create an instance of *QualtricsSurvayViewController* with your url
+                        /// 7. Create an instance of *QualtricsSurveyViewController* with your url
                         let surveyViewController = QualtricsSurveyViewController(url: url)
                         surveyViewController.modalPresentationStyle = .overCurrentContext
                         /// 8. Display the feedback form using your viewController
@@ -219,9 +219,9 @@ class MainViewModel: ObservableObject {
     /// This is an example logic you can use to adopt the logic for SwiftUI use when you want to display an intercept
     /// - Parameters: *targetingResult* is of **TargetingResult** type, and should be provided in the *.passed()* function callback
     private func presentSurvey(targetingResult: TargetingResult) {
-        /// 1. Make sure the survay URL is not broken.
+        /// 1. Make sure the survey URL is not broken.
         guard let urlString = targetingResult.getSurveyUrl(), let url = URL(string: urlString) else {
-            print("Qualtrics: \(self) unable to get survay URL")
+            print("Qualtrics: \(self) unable to get survey URL")
             return
         }
         /// 2. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
@@ -231,7 +231,7 @@ class MainViewModel: ObservableObject {
                 print("Qualtrics: unable to determine rootViewController.")
                 return
             }
-            /// 4. Create the webview you will be using in order to display the survay.
+            /// 4. Create the webview you will be using in order to display the survey.
             let request = NSURLRequest(url: url)
             let webView = WKWebView()
             let surveyViewController = UIViewController()
@@ -242,16 +242,16 @@ class MainViewModel: ObservableObject {
                 target: self,
                 action: #selector(self?.dismissSurvey)
             )
-            /// 5. Record the fact that user clicked on the survay button.
+            /// 5. Record the fact that user clicked on the survey button.
             targetingResult.recordClick()
             /// 6. Load the view.
             webView.load(request as URLRequest)
-            /// 7. Display the survay to the user (using the viewController you chose)
+            /// 7. Display the survey to the user (using the viewController you chose)
             vc.present(navigationController, animated: true, completion: nil)
         }
     }
 
-    /// This is a function that will dismiss the survay if the user clicks on *cancel* button
+    /// This is a function that will dismiss the survey if the user clicks on *cancel* button
     @objc private func dismissSurvey() {
         /// 1. Make sure to run this on the main thread
         DispatchQueue.main.async { [weak self] in
@@ -285,7 +285,7 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    /// This is an example implementation of a function that will determinr the right UIWiewScene that are currently used in the foreground of the app.
+    /// This is an example implementation of a function that will determine the right UIWindowScene that is currently being used in the foreground of the app.
     private func getCurrentWindowScene(completion: @escaping (UIWindowScene?) -> Void) {
         /// 1. Make sure to run this on the main thread.
         DispatchQueue.main.async {
