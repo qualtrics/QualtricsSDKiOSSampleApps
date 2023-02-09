@@ -12,6 +12,7 @@ class QualtricsProjectInfo: ObservableObject {
     static let shared = QualtricsProjectInfo()
     @Published var projectID: String
     @Published var brandID: String
+    /// Unlike projectID and brandID, not all QualtricsSDK features require interceptIDs
     @Published var interceptIDs: [String]?
 
     init(projectID: String = "", brandID: String = "", interceptIDs: [String]? = nil) {

@@ -22,8 +22,8 @@ struct ContentView: View {
             Button("Ask for review button") {
                 viewModel.requestReviewWithQualtrics()
             }
-            Button("Simple Custom Survay Invitation Dialog Button") {
-                viewModel.simpleCustomSurvayInvitationDialog()
+            Button("Simple Custom Survey Invitation Dialog Button") {
+                viewModel.simpleCustomSurveyInvitationDialog()
             }
             Button("Give Feedback Prompt Bypass Button") {
                 viewModel.giveFeedbackPromptBypassButtonTapped()
