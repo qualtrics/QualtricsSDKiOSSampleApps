@@ -28,6 +28,9 @@ struct ContentView: View {
             Button("Give Feedback Prompt Bypass Button") {
                 viewModel.giveFeedbackPromptBypassButtonTapped()
             }
+            Button("Request Notification Permission") {
+                viewModel.requestNotificationPermission()
+            }
             Spacer()
         }
         .padding()

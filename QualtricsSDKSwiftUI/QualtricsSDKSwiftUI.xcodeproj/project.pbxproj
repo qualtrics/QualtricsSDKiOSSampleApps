@@ -11,6 +11,7 @@
 		74312152298B316600307CD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74312151298B316600307CD9 /* ContentView.swift */; };
 		74312154298B316700307CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74312153298B316700307CD9 /* Assets.xcassets */; };
 		7431217C298B321D00307CD9 /* Qualtrics in Frameworks */ = {isa = PBXBuildFile; productRef = 7431217B298B321D00307CD9 /* Qualtrics */; };
+		7458D34829A4BB960090D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458D34729A4BB960090D4CA /* AppDelegate.swift */; };
 		7466BC7D299094AF00EC9D2C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BC7C299094AF00EC9D2C /* MainViewModel.swift */; };
 		7466BC852990A2D100EC9D2C /* QualtricsProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		74312155298B316700307CD9 /* QualtricsSDKSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualtricsSDKSwiftUI.entitlements; sourceTree = "<group>"; };
 		7431215D298B316700307CD9 /* QualtricsSDKSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QualtricsSDKSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74312167298B316700307CD9 /* QualtricsSDKSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QualtricsSDKSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7458D34729A4BB960090D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7466BC7C299094AF00EC9D2C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualtricsProjectInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				74312153298B316700307CD9 /* Assets.xcassets */,
 				7431214F298B316600307CD9 /* QualtricsSDKSwiftUIApp.swift */,
 				7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */,
+				7458D34729A4BB960090D4CA /* AppDelegate.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				7466BC852990A2D100EC9D2C /* QualtricsProjectInfo.swift in Sources */,
 				74312152298B316600307CD9 /* ContentView.swift in Sources */,
 				74312150298B316600307CD9 /* QualtricsSDKSwiftUIApp.swift in Sources */,
+				7458D34829A4BB960090D4CA /* AppDelegate.swift in Sources */,
 				7466BC7D299094AF00EC9D2C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
