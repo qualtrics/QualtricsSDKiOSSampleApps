@@ -35,6 +35,8 @@ struct ContentView: View {
             viewModel.registerViewVisit()
             viewModel.addEmbeddedText()
         }
+        .alert(viewModel.errorAlertTitle, isPresented: $viewModel.showingErrorAlert, actions: {}, message: {
+            Text(viewModel.errorAlertMessage)
+        })
     }
 }
-

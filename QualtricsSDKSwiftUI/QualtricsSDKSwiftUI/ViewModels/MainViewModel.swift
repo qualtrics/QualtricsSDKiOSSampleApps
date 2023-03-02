@@ -16,6 +16,10 @@ import UserNotifications
 class MainViewModel: ObservableObject {
     /// The line below is a neat way to store the projectID, brandID, and other data you may need in one place so it's easier to modify later on.
     @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
+    
+    @Published var showingErrorAlert = false
+    @Published var errorAlertTitle = ""
+    @Published var errorAlertMessage = ""
 
     /// **This function is the basic way to integrate qualtrics into your app**
     public func evaluateProjectButtonTapped() {
@@ -35,6 +39,10 @@ class MainViewModel: ObservableObject {
                 for (interceptID, result) in targetingResults {
                     /// 4. Make sure the preconditiones (logic determined within the project) are met before you display the intercept.
                     guard result.passed() else {
+                        self.handleErrorAlert(
+                            title: "Intercept evaluation went wrong",
+                            additional: result.getError()?.getErrorMessage()
+                        )
                         print("Qualtrics: The intercept evaluation for \(interceptID) went wrong.")
                         return;
                     }
@@ -56,12 +64,16 @@ class MainViewModel: ObservableObject {
                 return
             }
             /// 3. Call evaluateIntercept with the InterceptID that you want to display
-            Qualtrics.shared.evaluateIntercept(for: "YourInterceptID") { targetingResult in
+            Qualtrics.shared.evaluateIntercept(for: "yourInterceptID") { targetingResult in
                 /// This function handles only one intercept at the time, so it returns a singular object of *TargetingResult* type
                 ///  - parameter **targetingResult**  will allow you to determine if the intercept has met the  predefined conditions under chich it is to be displayed in your app.
                 ///  Those preconditions are set within your Qualtrics project.
                 guard targetingResult.passed() else {
-                    print("Qualtrics: The intercept evaluation for went wrong.")
+                    self.handleErrorAlert(
+                        title: "Intercept evaluation went wrong",
+                        additional: "- Set yourInterceptID \n" + (targetingResult.getError()?.getErrorMessage() ?? "")
+                    )
+                    print("Qualtrics: The intercept evaluation went wrong.")
                     return;
                 }
                 /// 4. Display the intercept using the rootViewController
@@ -77,6 +89,10 @@ class MainViewModel: ObservableObject {
             /// 2. Make sure the preconditions defined in your Qualtrics projects are met.
             guard targetingResult.passed() else {
                 print("Qualtrics: unable to ask for AppReview.")
+                self?.handleErrorAlert(
+                    title: "Unable to ask for AppReview",
+                    additional: "- Set yourInterceptID \n" + (targetingResult.getError()?.getErrorMessage() ?? "")
+                )
                 return;
             }
             /// 3.  Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
@@ -110,6 +126,10 @@ class MainViewModel: ObservableObject {
                 /// 4. Make sure the preconditiones (logic determined within the project) are met before you do anything else.
                 guard result.passed() else {
                     print("Qualtrics: The evaluation for \(interceptID) failed.")
+                    self?.handleErrorAlert(
+                        title: "Intercept evaluation failed \nregisterViewVisit()",
+                        additional: "- Set interceptIDs (optional) \n" + (result.getError()?.getErrorMessage() ?? "")
+                    )
                     return;
                 }
                 /// 5. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
@@ -146,6 +166,10 @@ class MainViewModel: ObservableObject {
                 /// 2. Make sure the preconditiones (logic determined within the project) are met before you do anything else.
                 guard result.passed() else {
                     print("Qualtrics: intercept validation failed for \(interceptID.debugDescription).")
+                    self?.handleErrorAlert(
+                        title: "Intercept validation failed",
+                        additional: result.getError()?.getErrorMessage()
+                    )
                     return
                 }
                 /// 3. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
@@ -192,6 +216,10 @@ class MainViewModel: ObservableObject {
                 /// 2. Make sure the preconditiones (logic determined within the project) are met before you do anything else.
                 guard targetingResult.passed(), let url = targetingResult.getSurveyUrl() else {
                     print("Qualtrics: validation of \(targetingResult) failed.")
+                    self?.handleErrorAlert(
+                        title: "Validation of \(targetingResult) failed",
+                        additional: targetingResult.getError()?.getErrorMessage()
+                    )
                     return
                 }
                 /// 3. Record the impression to your Qualtrics project.
@@ -217,11 +245,16 @@ class MainViewModel: ObservableObject {
     }
 
     /// This is an example logic you can use to adopt the logic for SwiftUI use when you want to display an intercept
-    /// - Parameters: *targetingResult* is of **TargetingResult** type, and should be provided in the *.passed()* function callback
+    /// - Parameters:
+    ///   - targetingResult: Should be provided in the *.passed()* function callback
     private func presentSurvey(targetingResult: TargetingResult) {
         /// 1. Make sure the survey URL is not broken.
         guard let urlString = targetingResult.getSurveyUrl(), let url = URL(string: urlString) else {
             print("Qualtrics: \(self) unable to get survey URL")
+            self.handleErrorAlert(
+                title: "Unable to get survey URL",
+                additional: targetingResult.getError()?.getErrorMessage()
+            )
             return
         }
         /// 2. Since you're using SwiftUI - you need to determine the viewController / scene that will handle the popup display
@@ -291,6 +324,40 @@ class MainViewModel: ObservableObject {
         DispatchQueue.main.async {
             /// 2. Return the scene that is currently first on the list.
             return completion(UIApplication.shared.connectedScenes.first as? UIWindowScene)
+        }
+    }
+    
+    /**
+     This is a helper function to check and alert for errors specific to the Qualtrics SDK
+      - Parameters:
+        - title: Passed to *errorAlertTitle*
+        - additional: Optional message added at the end of the *errorAlertMessage*
+     */
+    private func handleErrorAlert(title: String, additional: String? = nil) {
+        var message = ""
+        if qualtricsProjectInfo.brandID.isEmpty || qualtricsProjectInfo.brandID == "YourBrandID" {
+            message += "\n- Set brandID"
+        }
+        if qualtricsProjectInfo.projectID.isEmpty || qualtricsProjectInfo.projectID == "YourProjectID" {
+            message += "\n- Set projectID"
+        }
+        if (additional != nil) {
+            message += "\n" + additional!
+        }
+        showErrorAlertWithMessage(errorTitle: title, errorMessage: message)
+    }
+    
+    /**
+     This is a helper function to trigger an alert with a given title and message
+      - Parameters:
+        - errorTitle: Displayed as an alert title
+        - errorMessage: Displayed as an alert message
+     */
+    private func showErrorAlertWithMessage(errorTitle: String, errorMessage: String) {
+        DispatchQueue.main.async {
+            self.errorAlertTitle = errorTitle
+            self.errorAlertMessage = errorMessage
+            self.showingErrorAlert.toggle()
         }
     }
 }
