@@ -10,6 +10,7 @@ import Qualtrics
 
 @main
 struct QualtricsSDKSwiftUIApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
 
     init() {

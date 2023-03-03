@@ -283,6 +283,17 @@ class MainViewModel: ObservableObject {
             vc.present(navigationController, animated: true, completion: nil)
         }
     }
+    
+    /// This funciton will request the notification permisison to be granted. You need to call this function before you can use Notifications in your app.
+    public func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if let error = error {
+                print("Qualtrics: notification authorisation request failed with error: \(error).")
+                return
+            }
+            print("Qualtrics: Notifications permission granted.")
+        }
+    }
 
     /// This is a function that will dismiss the survey if the user clicks on *cancel* button
     @objc private func dismissSurvey() {
