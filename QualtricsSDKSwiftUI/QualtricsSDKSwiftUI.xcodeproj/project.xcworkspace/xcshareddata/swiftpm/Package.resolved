@@ -1,4 +1,5 @@
 {
+  "originHash" : "dc429bf28961187c65b48d5567f92f8f5db24cb08ab18dfa9847a1dec68b79e7",
   "pins" : [
     {
       "identity" : "qualtrics-digital-ios-sdk",
@@ -10,5 +11,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
