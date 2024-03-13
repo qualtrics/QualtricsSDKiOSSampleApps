@@ -2,7 +2,7 @@
 //  QualtricsSDKSwiftUIApp.swift
 //  QualtricsSDKSwiftUI
 //
-//  Created by Natalie Niziolek on 02/02/2023.
+//  Created by Qualtrics on 02/02/2023.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import Qualtrics
 @main
 struct QualtricsSDKSwiftUIApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @ObservedObject private var qualtricsProjectInfo = QualtricsProjectInfo.shared
+    private var qualtricsProjectInfo = QualtricsProjectInfo.shared
 
     init() {
         configureQualtricsProjectData()
@@ -24,6 +24,7 @@ struct QualtricsSDKSwiftUIApp: App {
         }
     }
 
+    /// This is an example function allowing you to configure project (hardcode the values)
     private func configureQualtricsProjectData() {
         qualtricsProjectInfo.brandID = "YourBrandID"
         qualtricsProjectInfo.projectID = "YourProjectID"

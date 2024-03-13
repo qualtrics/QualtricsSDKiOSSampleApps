@@ -14,24 +14,19 @@
 		7458D34829A4BB960090D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458D34729A4BB960090D4CA /* AppDelegate.swift */; };
 		7466BC7D299094AF00EC9D2C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BC7C299094AF00EC9D2C /* MainViewModel.swift */; };
 		7466BC852990A2D100EC9D2C /* QualtricsProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */; };
+		74CE2B0E2B8B36DE00837209 /* ProjectEvaluationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B0D2B8B36DE00837209 /* ProjectEvaluationExample.swift */; };
+		74CE2B132B8B388C00837209 /* GettingRootViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B122B8B388C00837209 /* GettingRootViewControllerExample.swift */; };
+		74CE2B172B8B3E5900837209 /* InterceptEvaluationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B162B8B3E5900837209 /* InterceptEvaluationExample.swift */; };
+		74CE2B192B8B3EED00837209 /* GettingCurrentWindowSceneExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B182B8B3EED00837209 /* GettingCurrentWindowSceneExample.swift */; };
+		74CE2B1B2B8B408000837209 /* ReviewRequestExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B1A2B8B408000837209 /* ReviewRequestExample.swift */; };
+		74CE2B1D2B8B40F600837209 /* RegisterViewVisitExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B1C2B8B40F600837209 /* RegisterViewVisitExample.swift */; };
+		74CE2B1F2B8B416300837209 /* AddEmbeddedTextExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B1E2B8B416300837209 /* AddEmbeddedTextExample.swift */; };
+		74CE2B212B8B41EA00837209 /* CustomSurveyInvitationDialogExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B202B8B41EA00837209 /* CustomSurveyInvitationDialogExample.swift */; };
+		74CE2B232B8B427E00837209 /* PresentingSurveyExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B222B8B427E00837209 /* PresentingSurveyExample.swift */; };
+		74CE2B252B8B432C00837209 /* DismissingSurveyExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B242B8B432C00837209 /* DismissingSurveyExample.swift */; };
+		74CE2B272B8B43D300837209 /* RequestNotificationPermissionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B262B8B43D300837209 /* RequestNotificationPermissionExample.swift */; };
+		74CE2B292B8B444E00837209 /* GiveFeedbackPromptBypassExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CE2B282B8B444E00837209 /* GiveFeedbackPromptBypassExample.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7431215E298B316700307CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74312144298B316600307CD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7431214B298B316600307CD9;
-			remoteInfo = QualtricsSDKSwiftUI;
-		};
-		74312168298B316700307CD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74312144298B316600307CD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7431214B298B316600307CD9;
-			remoteInfo = QualtricsSDKSwiftUI;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7431214C298B316600307CD9 /* QualtricsSDKSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QualtricsSDKSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,11 +34,21 @@
 		74312151298B316600307CD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74312153298B316700307CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74312155298B316700307CD9 /* QualtricsSDKSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QualtricsSDKSwiftUI.entitlements; sourceTree = "<group>"; };
-		7431215D298B316700307CD9 /* QualtricsSDKSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QualtricsSDKSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		74312167298B316700307CD9 /* QualtricsSDKSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QualtricsSDKSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7458D34729A4BB960090D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7466BC7C299094AF00EC9D2C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualtricsProjectInfo.swift; sourceTree = "<group>"; };
+		74CE2B0D2B8B36DE00837209 /* ProjectEvaluationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEvaluationExample.swift; sourceTree = "<group>"; };
+		74CE2B122B8B388C00837209 /* GettingRootViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingRootViewControllerExample.swift; sourceTree = "<group>"; };
+		74CE2B162B8B3E5900837209 /* InterceptEvaluationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterceptEvaluationExample.swift; sourceTree = "<group>"; };
+		74CE2B182B8B3EED00837209 /* GettingCurrentWindowSceneExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingCurrentWindowSceneExample.swift; sourceTree = "<group>"; };
+		74CE2B1A2B8B408000837209 /* ReviewRequestExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequestExample.swift; sourceTree = "<group>"; };
+		74CE2B1C2B8B40F600837209 /* RegisterViewVisitExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewVisitExample.swift; sourceTree = "<group>"; };
+		74CE2B1E2B8B416300837209 /* AddEmbeddedTextExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmbeddedTextExample.swift; sourceTree = "<group>"; };
+		74CE2B202B8B41EA00837209 /* CustomSurveyInvitationDialogExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSurveyInvitationDialogExample.swift; sourceTree = "<group>"; };
+		74CE2B222B8B427E00837209 /* PresentingSurveyExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingSurveyExample.swift; sourceTree = "<group>"; };
+		74CE2B242B8B432C00837209 /* DismissingSurveyExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingSurveyExample.swift; sourceTree = "<group>"; };
+		74CE2B262B8B43D300837209 /* RequestNotificationPermissionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNotificationPermissionExample.swift; sourceTree = "<group>"; };
+		74CE2B282B8B444E00837209 /* GiveFeedbackPromptBypassExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveFeedbackPromptBypassExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,20 +57,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7431217C298B321D00307CD9 /* Qualtrics in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7431215A298B316700307CD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74312164298B316700307CD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				7431214C298B316600307CD9 /* QualtricsSDKSwiftUI.app */,
-				7431215D298B316700307CD9 /* QualtricsSDKSwiftUITests.xctest */,
-				74312167298B316700307CD9 /* QualtricsSDKSwiftUIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +82,7 @@
 		7431214E298B316600307CD9 /* QualtricsSDKSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				74CE2B0F2B8B36E900837209 /* CodeExamples */,
 				7466BC812990955300EC9D2C /* SharedComponents */,
 				7466BC7B2990944100EC9D2C /* ViewModels */,
 				7466BC7A2990943700EC9D2C /* Views */,
@@ -121,11 +111,30 @@
 			isa = PBXGroup;
 			children = (
 				74312153298B316700307CD9 /* Assets.xcassets */,
-				7431214F298B316600307CD9 /* QualtricsSDKSwiftUIApp.swift */,
-				7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */,
 				7458D34729A4BB960090D4CA /* AppDelegate.swift */,
+				7466BC842990A2D100EC9D2C /* QualtricsProjectInfo.swift */,
+				7431214F298B316600307CD9 /* QualtricsSDKSwiftUIApp.swift */,
 			);
 			path = SharedComponents;
+			sourceTree = "<group>";
+		};
+		74CE2B0F2B8B36E900837209 /* CodeExamples */ = {
+			isa = PBXGroup;
+			children = (
+				74CE2B1E2B8B416300837209 /* AddEmbeddedTextExample.swift */,
+				74CE2B202B8B41EA00837209 /* CustomSurveyInvitationDialogExample.swift */,
+				74CE2B242B8B432C00837209 /* DismissingSurveyExample.swift */,
+				74CE2B182B8B3EED00837209 /* GettingCurrentWindowSceneExample.swift */,
+				74CE2B122B8B388C00837209 /* GettingRootViewControllerExample.swift */,
+				74CE2B282B8B444E00837209 /* GiveFeedbackPromptBypassExample.swift */,
+				74CE2B162B8B3E5900837209 /* InterceptEvaluationExample.swift */,
+				74CE2B222B8B427E00837209 /* PresentingSurveyExample.swift */,
+				74CE2B0D2B8B36DE00837209 /* ProjectEvaluationExample.swift */,
+				74CE2B1C2B8B40F600837209 /* RegisterViewVisitExample.swift */,
+				74CE2B262B8B43D300837209 /* RequestNotificationPermissionExample.swift */,
+				74CE2B1A2B8B408000837209 /* ReviewRequestExample.swift */,
+			);
+			path = CodeExamples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,42 +160,6 @@
 			productReference = 7431214C298B316600307CD9 /* QualtricsSDKSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7431215C298B316700307CD9 /* QualtricsSDKSwiftUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 74312174298B316700307CD9 /* Build configuration list for PBXNativeTarget "QualtricsSDKSwiftUITests" */;
-			buildPhases = (
-				74312159298B316700307CD9 /* Sources */,
-				7431215A298B316700307CD9 /* Frameworks */,
-				7431215B298B316700307CD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7431215F298B316700307CD9 /* PBXTargetDependency */,
-			);
-			name = QualtricsSDKSwiftUITests;
-			productName = QualtricsSDKSwiftUITests;
-			productReference = 7431215D298B316700307CD9 /* QualtricsSDKSwiftUITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		74312166298B316700307CD9 /* QualtricsSDKSwiftUIUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 74312177298B316700307CD9 /* Build configuration list for PBXNativeTarget "QualtricsSDKSwiftUIUITests" */;
-			buildPhases = (
-				74312163298B316700307CD9 /* Sources */,
-				74312164298B316700307CD9 /* Frameworks */,
-				74312165298B316700307CD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				74312169298B316700307CD9 /* PBXTargetDependency */,
-			);
-			name = QualtricsSDKSwiftUIUITests;
-			productName = QualtricsSDKSwiftUIUITests;
-			productReference = 74312167298B316700307CD9 /* QualtricsSDKSwiftUIUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,14 +172,6 @@
 				TargetAttributes = {
 					7431214B298B316600307CD9 = {
 						CreatedOnToolsVersion = 14.2;
-					};
-					7431215C298B316700307CD9 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 7431214B298B316600307CD9;
-					};
-					74312166298B316700307CD9 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 7431214B298B316600307CD9;
 					};
 				};
 			};
@@ -227,8 +192,6 @@
 			projectRoot = "";
 			targets = (
 				7431214B298B316600307CD9 /* QualtricsSDKSwiftUI */,
-				7431215C298B316700307CD9 /* QualtricsSDKSwiftUITests */,
-				74312166298B316700307CD9 /* QualtricsSDKSwiftUIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,20 +205,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7431215B298B316700307CD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74312165298B316700307CD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,42 +212,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CE2B212B8B41EA00837209 /* CustomSurveyInvitationDialogExample.swift in Sources */,
 				7466BC852990A2D100EC9D2C /* QualtricsProjectInfo.swift in Sources */,
+				74CE2B292B8B444E00837209 /* GiveFeedbackPromptBypassExample.swift in Sources */,
 				74312152298B316600307CD9 /* ContentView.swift in Sources */,
+				74CE2B232B8B427E00837209 /* PresentingSurveyExample.swift in Sources */,
+				74CE2B1B2B8B408000837209 /* ReviewRequestExample.swift in Sources */,
+				74CE2B1F2B8B416300837209 /* AddEmbeddedTextExample.swift in Sources */,
+				74CE2B172B8B3E5900837209 /* InterceptEvaluationExample.swift in Sources */,
 				74312150298B316600307CD9 /* QualtricsSDKSwiftUIApp.swift in Sources */,
+				74CE2B132B8B388C00837209 /* GettingRootViewControllerExample.swift in Sources */,
+				74CE2B192B8B3EED00837209 /* GettingCurrentWindowSceneExample.swift in Sources */,
+				74CE2B272B8B43D300837209 /* RequestNotificationPermissionExample.swift in Sources */,
+				74CE2B0E2B8B36DE00837209 /* ProjectEvaluationExample.swift in Sources */,
+				74CE2B252B8B432C00837209 /* DismissingSurveyExample.swift in Sources */,
 				7458D34829A4BB960090D4CA /* AppDelegate.swift in Sources */,
 				7466BC7D299094AF00EC9D2C /* MainViewModel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74312159298B316700307CD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74312163298B316700307CD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				74CE2B1D2B8B40F600837209 /* RegisterViewVisitExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7431215F298B316700307CD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7431214B298B316600307CD9 /* QualtricsSDKSwiftUI */;
-			targetProxy = 7431215E298B316700307CD9 /* PBXContainerItemProxy */;
-		};
-		74312169298B316700307CD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7431214B298B316600307CD9 /* QualtricsSDKSwiftUI */;
-			targetProxy = 74312168298B316700307CD9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7431216F298B316700307CD9 /* Debug */ = {
@@ -424,7 +358,7 @@
 				CODE_SIGN_ENTITLEMENTS = QualtricsSDKSwiftUI/QualtricsSDKSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,14 +371,14 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = your.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -462,7 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = QualtricsSDKSwiftUI/QualtricsSDKSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -475,110 +409,20 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = your.identifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		74312175298B316700307CD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QualtricsSDKSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QualtricsSDKSwiftUI";
-			};
-			name = Debug;
-		};
-		74312176298B316700307CD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QualtricsSDKSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QualtricsSDKSwiftUI";
-			};
-			name = Release;
-		};
-		74312178298B316700307CD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QualtricsSDKSwiftUI;
-			};
-			name = Debug;
-		};
-		74312179298B316700307CD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QVV69SC6MP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = qxm.QualtricsSDKSwiftUIUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QualtricsSDKSwiftUI;
 			};
 			name = Release;
 		};
@@ -599,24 +443,6 @@
 			buildConfigurations = (
 				74312172298B316700307CD9 /* Debug */,
 				74312173298B316700307CD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		74312174298B316700307CD9 /* Build configuration list for PBXNativeTarget "QualtricsSDKSwiftUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				74312175298B316700307CD9 /* Debug */,
-				74312176298B316700307CD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		74312177298B316700307CD9 /* Build configuration list for PBXNativeTarget "QualtricsSDKSwiftUIUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				74312178298B316700307CD9 /* Debug */,
-				74312179298B316700307CD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -2,22 +2,22 @@
 //  QualtricsProjectInfo.swift
 //  QualtricsSDKSwiftUI
 //
-//  Created by Natalie Niziolek on 06/02/2023.
+//  Created by Qualtrics on 06/02/2023.
 //
 
 import Foundation
 
 /// This is an example on how to extract the most commonly used data for project configuration in one place.
-class QualtricsProjectInfo: ObservableObject {
+class QualtricsProjectInfo {
     static let shared = QualtricsProjectInfo()
-    @Published var projectID: String
-    @Published var brandID: String
-    /// Unlike projectID and brandID, not all QualtricsSDK features require interceptIDs
-    @Published var interceptIDs: [String]?
+    var projectID: String
+    var brandID: String
+    /// Unlike *projectID* and *brandID*, not all QualtricsSDK features require *interceptID*s, and there may be more than one so you may want to use an array instead.
+    var interceptID: String?
 
-    init(projectID: String = "", brandID: String = "", interceptIDs: [String]? = nil) {
+    init(projectID: String = "", brandID: String = "", interceptID: String? = nil) {
         self.projectID = projectID
         self.brandID = brandID
-        self.interceptIDs = interceptIDs
+        self.interceptID = interceptID
     }
 }
