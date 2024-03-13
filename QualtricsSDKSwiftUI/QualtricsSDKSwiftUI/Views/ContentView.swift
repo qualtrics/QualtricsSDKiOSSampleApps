@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  QualtricsSDKSwiftUI
 //
-//  Created by Natalie Niziolek on 02/02/2023.
+//  Created by Qualtrics on 02/02/2023.
 //
 
 import SwiftUI
@@ -13,19 +13,19 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             Spacer()
-            Button("Evaluate project button") {
+            Button("Evaluate Project") {
                 viewModel.evaluateProjectButtonTapped()
             }
-            Button("Evaluate second intercept button") {
+            Button("Evaluate Intercept") {
                 viewModel.evaluateInterceptButtonTapped()
             }
-            Button("Ask for review button") {
+            Button("Request AppStore Review") {
                 viewModel.requestReviewWithQualtrics()
             }
-            Button("Simple Custom Survey Invitation Dialog Button") {
-                viewModel.simpleCustomSurveyInvitationDialog()
+            Button("Custom Dialog") {
+                viewModel.customSurveyInvitationDialog()
             }
-            Button("Give Feedback Prompt Bypass Button") {
+            Button("Evaluate But Bypass Prompt") {
                 viewModel.giveFeedbackPromptBypassButtonTapped()
             }
             Button("Request Notification Permission") {
