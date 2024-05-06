@@ -16,10 +16,6 @@ class MainViewModel: ObservableObject {
     /// The line below is a neat way to store the *projectID*, *brandID*, and other data you may need in one place so it's easier to modify later on.
     private var qualtricsProjectInfo = QualtricsProjectInfo.shared
 
-    @Published var showingErrorAlert = false
-    @Published var errorAlertTitle = ""
-    @Published var errorAlertMessage = ""
-
     /// **This function is the basic way to integrate qualtrics into your app.**
     func evaluateProjectButtonTapped() {
         ProjectEvaluationExample().evaluateProjectButtonTapped()
